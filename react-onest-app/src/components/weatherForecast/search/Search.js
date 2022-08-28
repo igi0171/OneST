@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { ApiData } from "../../api";
 
 const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
@@ -8,7 +7,9 @@ const Search = ({ onSearchChange }) => {
   const loadAreas = () => {
     return fetch(
       "https://api.data.gov.sg/v1/environment/2-hour-weather-forecast",
-      ApiData
+      {
+        method: "GET",
+      }
     )
       .then((response) => response.json())
       .then((response) => {
