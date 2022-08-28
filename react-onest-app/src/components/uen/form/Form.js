@@ -21,7 +21,7 @@ const Form = () => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <h1 className={styles.validation}>Validation</h1>
+          <h1 className={styles.validation}>New UEN Validation</h1>
         </div>
         <div>
           <label className={styles.uen}>UEN</label>
@@ -36,13 +36,14 @@ const Form = () => {
           />
           <p className={styles.error}>
             {errors.uen?.type === "required" && "UEN is required"}
-            {errors.uen?.type === "pattern" && "Entered UEN is in wrong format"}
+            {errors.uen?.type === "pattern" &&
+              "Entered UEN is in wrong format. UEN should be in TyyPQnnnnX format, where 'Tyy' / 'Syy' / 'yyyy'= year of issuance, T' represents '20', 'S' represents '19' and 'R' represents '18'. E.g. T08 means year 2008, S99 means year 1999 and R00 means year 1800; 'PQ' = Entity-type where 'P'= a alphabetical letter, 'Q' = an alpha-numeric digit, E.g. 'LL'= 'Limited Liability Partnership'; 'n' = a number; 'X' = a check alphabet; For example, the UEN for a limited liability partnership (LLP) formed on 1 January 2009 could be 'T09LL0001B'."}
           </p>
         </div>
         <div>
-          <input className={styles.button} type="submit" value="Check"></input>
+          <input className={styles.button} type="submit"></input>
         </div>
-        {valid ? <p>{uen} is valid</p> : <p></p>}
+        {valid ? <p>{uen} is a valid UEN</p> : <p></p>}
       </form>
     </div>
   );
