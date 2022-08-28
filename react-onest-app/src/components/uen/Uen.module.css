@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  position: relative;
+  margin: 150px auto;
+  width: 450px;
+  padding: 40px;
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+.card div {
+  margin-top: 12px;
+}
